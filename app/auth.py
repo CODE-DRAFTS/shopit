@@ -12,7 +12,7 @@ SECRET_KEY ='hello' #TODO : make this a env variable
 
 def create_access_token(data: dict):
     to_encode = data.copy()
-    expire = datetime.utcnow() + timedelta( minutes=30 )
+    expire = datetime.utcnow() + timedelta( minutes=90000000 )
     to_encode.update( {"exp": expire } )
     return jwt.encode(to_encode, SECRET_KEY, algorithm='HS256' )
 
